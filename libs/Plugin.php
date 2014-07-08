@@ -18,6 +18,10 @@ class Plugin {
 
     }
 
+    public static function load_scripts () {
+
+    }
+
     public static function install_admin_panel () {
         add_menu_page("Social Cache", "Social Cache", "administrator", "wpsc-menu",  array('\WPSC\Libs\Controllers\Admin', 'index'));
 

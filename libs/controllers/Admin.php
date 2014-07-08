@@ -4,6 +4,10 @@ namespace WPSC\Libs\Controllers;
 
 class Admin {
 
+    public static function load_scripts () {
+
+    }
+
     public static function header () {
 
     }
