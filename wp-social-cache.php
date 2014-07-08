@@ -12,8 +12,10 @@ License: MIT
 require_once('constants.php');
 require_once('autoload.php');
 
+use \WPSC\Libs\Plugin as wpsc;
 
 function wpsc_initiate () {
+    wpsc::initiate();
     do_action('wpsc_initiate');
 }
 
@@ -33,8 +35,8 @@ add_action('admin_enqueue_scripts', 'wpsc_load_admin_scripts');
 add_action('wp_enqueue_scripts', 'wpsc_load_plugin_scripts');
 
 // Administration Menu
-// add_action('admin_menu', array('WPTAdmin', 'install'));
+add_action('admin_menu', array('\WPSC\Libs\Plugin', 'install_admin_panel'));
 
 // Plugin Install/Uninstall hooks
-// register_activation_hook(__FILE__, array('WPTeacher', 'install') );
-// register_deactivation_hook(__FILE__, array('WPTeacher', 'uninstall'));
+register_activation_hook(__FILE__, array('\WPSC\Libs\Plugin', 'install') );
+register_deactivation_hook(__FILE__, array('\WPSC\Libs\Plugin', 'install'));
